@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ *
+ * Module implementation for nodeapi_example module.
+ */
+
+/**
+ * Implements hook_preprocess_menu_link().
+ */
+function menu_fragment_preprocess_menu_link(&$vars) {
+  // Allow fragements as menu items
+  if (substr($vars['element']['#href'], 0, 2) === ':#') {
+    $vars['element']['#localized_options']['fragment'] = substr($vars['element']['#href'], 2);
+    $vars['element']['#href'] = drupal_is_front_page() ? '<front>' : drupal_get_path_alias();
+    $vars['element']['#attributes']['class'][] = 'fragment';
+  }
+}
