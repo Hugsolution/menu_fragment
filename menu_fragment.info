@@ -3,6 +3,7 @@ description = Menu can put "#link" How to use ":#link" menu manage link path ex:
 package = Hugsolution
 core = 7.x
 
+scripts[] = js/menu_fragment.js
 
 ; Information added by Drupal.org packaging script on 2013-12-30
 version = "7.x-1.x-dev"
